@@ -1,11 +1,12 @@
 import './App.css'
 import WeatherCard from './components/WeatherCard/WeatherCard'
+import * as styles from './App.css';
 
 function App() {
   return (
-    <div>
+    <div className={styles.container}>
       <WeatherCard />
-      Icon made by iconixar from www.flaticon.com 
+      <p>Icons made by iconixar from www.flaticon.com</p>
     </div>
   );
 }

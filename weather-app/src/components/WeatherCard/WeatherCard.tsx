@@ -15,7 +15,12 @@ export default function WeatherCard() {
   if (!weather) return (<p>Loading...</p>);
 
   const forecasts = weather.forecast.map(forecast => (
-    <ForecastTile day={forecast.day} icon={forecast.weather} temp={forecast.temp} key={forecast.day} />
+    <ForecastTile
+      day={forecast.day}
+      icon={forecast.weather}
+      temp={forecast.temp}
+      key={forecast.day}
+    />
   ));
 
   return (

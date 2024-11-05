@@ -13,6 +13,8 @@ export interface WeatherIconProps {
   size: 'lg' | 'sm';
 }
 
+
+// Map WeatherTypes to icons
 const srcMap: Record<WeatherType, string> = {
   sun: sun,
   cloud: cloud,

@@ -1,39 +1,6 @@
-export interface WeatherResponse {
-  elevation: number;
-  generationtime_ms: number;
-  latitude: number;
-  longitude: number;
-  timezone: string;
-  timezone_abbreviation: string;
-  utc_offset_seconds: number;
-  current: {
-    interval: number;
-    temperature_2m: number;
-    time: string;
-    weather_code: number;
-    wind_speed_10m: number;
-  };
-  current_units: {
-    interval: string;
-    temperature_2m: string;
-    time: string;
-    weather_code: string;
-    wind_speed_10m: string;
-  };
-  daily: {
-    temperature_2m_max: number[];
-    time: string[];
-    weather_code: number[];
-  };
-  daily_units: {
-    temperature_2m_max: string;
-    time: string;
-    weather_code: string;
-  }
-}
-
 export type WeatherType = 'sun' | 'cloudy' | 'cloud' | 'foog' | 'rainy' | 'snowy' | 'storm';
 
+// Map selected WMO codes to our WeatherTypes
 const weatherCodeMap: Record<string, WeatherType> = {
 	'0': 'sun',
 	'1': 'sun',
@@ -65,6 +32,19 @@ const weatherCodeMap: Record<string, WeatherType> = {
 	'99': 'storm'
 }
 
+export interface WeatherResponse {
+  current: {
+    temperature_2m: number;
+    weather_code: number;
+    wind_speed_10m: number;
+  };
+  daily: {
+    temperature_2m_max: number[];
+    time: string[];
+    weather_code: number[];
+  };
+}
+
 export interface Weather {
   current: {
     weather: WeatherType;
@@ -78,6 +58,9 @@ export interface Weather {
   }[]
 }
 
+/**
+ * Gets the current weather and a 7 day forecast for Rosenkrantzgade 19B, 8000 Aarhus C
+ */
 export async function getWeather(): Promise<Weather> {
   const params = new URLSearchParams({
     latitude: '56.1518',

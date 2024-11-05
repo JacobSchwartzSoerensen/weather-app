@@ -18,7 +18,7 @@ export const currentContainer = style({
 
 export const currentIcon = style({
   flex: '1 0 auto',
-  padding: '16px',
+  paddingInline: '16px',
 });
 
 const textBase = style({
@@ -45,5 +45,5 @@ export const windText = style([
 export const forecastList = style({
   display: 'flex',
   flexDirection: 'row',
-  justifyContent: 'space-evenly'
+  justifyContent: 'space-between'
 })
