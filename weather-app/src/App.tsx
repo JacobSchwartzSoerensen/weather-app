@@ -1,8 +1,12 @@
 import './App.css'
+import WeatherCard from './components/WeatherCard/WeatherCard'
 
 function App() {
   return (
-    <p>Hello World</p>
+    <div>
+      <WeatherCard />
+      Icon made by iconixar from www.flaticon.com 
+    </div>
   );
 }
 
