@@ -5,6 +5,6 @@ export const icon = styleVariants({
     width: '200px'
   },
   sm: {
-    width: '30px'
+    width: '60px'
   }
 });
